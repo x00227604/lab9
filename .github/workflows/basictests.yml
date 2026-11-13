@@ -1,0 +1,33 @@
+name: Lab 9 Basic Tests
+
+on:
+  push:
+
+jobs:
+  lab9-basic-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make validate-data.sh executable
+        run: chmod +x ./validate-data.sh
+
+      - name: Test 1 - Valid name and mobile number (Expected PASS)
+        run: |
+          result=$(./validate-data.sh John 0871234567)
+          echo "Result: $result"
+          [ "$result" = "PASS" ]
+
+      - name: Test 2 - Name longer than 15 chars (Expected FAIL)
+        run: |
+          result=$(./validate-data.sh AlexanderTheGreat 0871234567)
+          echo "Result: $result"
+          [ "$result" = "FAIL" ]
+
+      - name: Test 3 - Mobile number longer than 10 chars (Expected FAIL)
+        run: |
+          result=$(./validate-data.sh John 087123456789)
+          echo "Result: $result"
+          [ "$result" = "FAIL" ]
