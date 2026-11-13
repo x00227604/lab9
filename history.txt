@@ -1,0 +1,403 @@
+    1  mkdir devops
+    2  cd devops
+    3  mkdir week1
+    4  cd week1
+    5  pwd
+    6  cat > hellow.sh << 'EOF'
+    7  #!/bin/bash
+    8  echo "Hello devops week1"
+    9  EOF
+   10  chmod +x hellow.sh
+   11  ./hellow.sh
+   12  mkdir devops
+   13  git add hellow.sh
+   14  git init -b main
+   15  git add hellow.sh
+   16  cat
+   17  list
+   18  cat hellow
+   19  cd devops
+   20  mkdir test1
+   21  cd test1
+   22  nano hellow.sh
+   23  cat hellow.sh
+   24  nano hellow.sh
+   25  cat hellow.sh
+   26  git add hellow.sh
+   27  git init -b main
+   28  git add hellow.sh
+   29  git commit hellow.sh
+   30  ssh-keygen -t ed25519 -C "x00227604@mytudublin.ie"
+   31  nano ~>
+   32  nano ~/.ssh/id_ed25519.pub
+   33  git remove -v
+   34  git remote -v
+   35  git commit -m "first version"
+   36  git config --global user.email X00227604@mytudublin.ie
+   37  git config --global user.name x00227604
+   38  git commit -m "first version"
+   39  git push -u origin main
+   40  git remote add origin git@github.com:x00227604/devopsWeek1.git
+   41  git push -u origin main
+   42  nano hellow.sh
+   43  git add hellow.sh
+   44  git commit -m "second version"
+   45  git push
+   46  date
+   47  history
+   48  cd devops
+   49  mkdir week2
+   50  cd week2
+   51  git clone git@github.com:x00227604/devopsWeek1.git
+   52  git clone git@github.com:x00227604/devopsWeek1.git .
+   53  ls -la
+   54  git log --oneline
+   55  cd devopsWeek1
+   56  ls -la
+   57  git log --oneline
+   58  nano hellow.sh
+   59  cat hellow.sh
+   60  ./hellow.sh
+   61  git add hellow.sh
+   62  git commit -m "third version"
+   63  git push
+   64  git log --oneline
+   65  git tag -a v1 00b711e -m "Version 1: Hello devops week1"
+   66  git tag -a v2 1a4fc96 -m "Version 2: Hello DEVOPS week1"
+   67  git tag -a v3 70c88cb -m "Version 3: Hello DEVOPS, Nice to be here"
+   68  git push origin --tags
+   69  git tag
+   70  cd ~/devops
+   71  mkdir week2tag
+   72  cd week2tag
+   73  git clone git@github.com:x00227604/devopsWeek1.git .
+   74  git fetch --tags
+   75  git tag
+   76  git checkout -b tag-test
+   77  git branch
+   78  nano hellow.shnano hellow.sh
+   79  git add hellow.sh
+   80  git commit -m "Add tag-test branch version on top of v1"
+   81  git push origin tag-test
+   82  date
+   83  cd ~/devops/week2
+   84  cd .
+   85  cd ..cd ~/devops/week1
+   86  cd .,
+   87  cd ..
+   88  cd week1
+   89  git checkout main
+   90  cd ..
+   91  cd week2
+   92  git checkout main
+   93  cd ..
+   94  cd week1
+   95  git branch -a
+   96  git status
+   97  cd ..
+   98  cd week2
+   99  git branch -a
+  100  git status
+  101  cd projects
+  102  ls
+  103  cd debops
+  104  cd devops
+  105  git config --global user.name "Ali Osman"
+  106  git config --global user.email "x00227604@mytudublin.ie"
+  107  gh auth login
+  108  git clone https://github.com/pearse1104/X00227604.git
+  109  cd X00227604
+  110  echo "Hello" > hello.txt
+  111  git add hello.txt
+  112  git commit -m "hello.txt test"
+  113  git push -u origin main
+  114  mkdir ~/scripts && cd ~/scripts
+  115  gh repo create lab6 --public --add-readme
+  116  gh repo view x00227604/lab6 --json name,visibility
+  117  COLLAB="X00225889"
+  118  gh api -X PUT repos/x00227604/lab6/collaborators/$COLLAB -f permission=push
+  119  COLLAB="X00225889"
+  120  gh api repos/x00227604/lab6/invitations --jq '.[].invitee.login'
+  121  gh api repos/x00227604/lab6/collaborators --jq '.[].login'
+  122  gh api repos/x00227604/lab6/collaborators/$COLLAB/permission --jq '.permission'
+  123  gh auth login
+  124  gh auth switch --user other-github-username
+  125  gh auth switch --user X00225889
+  126  gh auth status
+  127  gh auth switch --user X00225889
+  128  gh auth login
+  129  gh auth switch --user X00225889
+  130  h auth status 
+  131  gh auth status 
+  132  cd ~
+  133  git clone https://github.com/x00227604/lab6.git collabtest
+  134  cd collabtest
+  135  git config user.name "Ayaan"
+  136  git config user.email "X00225889@mytudublin.ie"
+  137  echo "collab was here" > collab.txt
+  138  git add collab.txt
+  139  git commit -m "collab test"
+  140  git push
+  141  gh auth switch --user x00227604
+  142  gh auth status
+  143  cd ~/scripts
+  144  cat > q1.sh <<'EOF'
+  145  #!/bin/bash
+  146  gh repo create lab6 --public --add-readme
+  147  gh repo view x00227604/lab6 --json name,visibility
+  148  EOF
+  149  cat > q2.sh <<'EOF'
+  150  #!/bin/bash
+  151  COLLAB="X00225889"
+  152  gh api -X PUT repos/x00227604/lab6/collaborators/$COLLAB -f permission=push
+  153  EOF
+  154  cat > q3.sh <<'EOF'
+  155  #!/bin/bash
+  156  COLLAB="X00225889"
+  157  gh api repos/x00227604/lab6/invitations --jq '.[].invitee.login'
+  158  gh api repos/x00227604/lab6/collaborators --jq '.[].login'
+  159  gh api repos/x00227604/lab6/collaborators/$COLLAB/permission --jq '.permission'
+  160  EOF
+  161  cat > q4.sh <<'EOF'
+  162  #!/bin/bash
+  163  COLLAB="X00225889"
+  164  gh api -X DELETE repos/x00227604/lab6/collaborators/$COLLAB
+  165  gh api repos/x00227604/lab6/collaborators --jq '.[].login'
+  166  EOF
+  167  cat > q5.sh <<'EOF'
+  168  #!/bin/bash
+  169  gh issue create --repo x00227604/lab6 \
+  170    --title "create helloworld echo file" \
+  171    --body "echo hello Pearse from lab6" \
+  172    --assignee "@me" \
+  173    --label enhancement
+  174  EOF
+  175  cat > q6.sh <<'EOF'
+  176  #!/bin/bash
+  177  cd ~
+  178  git clone https://github.com/x00227604/lab6.git
+  179  cd lab6
+  180  git checkout -b Q12345
+  181  cp ~/scripts/q[1-5].sh .
+  182  git add q1.sh q2.sh q3.sh q4.sh q5.sh
+  183  git commit -m "Add scripts for q1 to q5"
+  184  git push -u origin Q12345
+  185  EOF
+  186  cat > q7.sh <<'EOF'
+  187  #!/bin/bash
+  188  gh pr create --repo x00227604/lab6 \
+  189    --base main --head Q12345 \
+  190    --title "Add scripts for q1-q5" \
+  191    --body "Adds the gh CLI scripts for questions 1 to 5 from the lab."
+  192  EOF
+  193  cat > q8.sh <<'EOF'
+  194  #!/bin/bash
+  195  gh pr merge Q12345 --repo x00227604/lab6 --merge
+  196  EOF
+  197  chmod +x q*.sh
+  198  ls
+  199  ./q4.sh
+  200  gh auth switch --user X00225889
+  201  cd ~/collabtest
+  202  echo "second try" >> collab.txt
+  203  git add collab.txt
+  204  git commit -m "should fail"
+  205  git push
+  206  gh auth switch --user x00227604
+  207  gh auth status
+  208  cd ~/scripts
+  209  ./q5.sh
+  210  ./q6.sh
+  211  ./q7.sh 
+  212  ./q8.sh
+  213  cd ~/lab6
+  214  git checkout main
+  215  git pull
+  216  cp ~/scripts/q7.sh ~/scripts/q8.sh .
+  217  git add q7.sh q8.sh
+  218  git commit -m "scripts for q7 and q8"
+  219  git push origin main
+  220  git fetch
+  221  git ls-tree --name-only origin/main
+  222  git ls-tree --name-only origin/Q12345
+  223  git branch -r
+  224  history
+  225  git config --global user.email x00227604@mytudublin.ie
+  226  git config --global user.name x00227604
+  227  git clone git@github.com:pearse1104/CA1-CLOUD.git
+  228  cd CA1-CLOUD
+  229  bash user.sh
+  230  ls
+  231  nano myID.txt
+  232  cd ..
+  233  git clone git@github.com:x00227604/devopsCA1cloud.git
+  234  cd CA1-CLOUD
+  235  help cpy
+  236  help
+  237  help help
+  238  builtin help
+  239  git status
+  240  git
+  241  mv
+  242  mv --help
+  243  cpy
+  244  copy
+  245  git add .
+  246  git branch
+  247  git status
+  248  mv -b user.sh ./devopsCA1cloud
+  249  mv -b myID.txt ./devopsCA1cloud
+  250  ls
+  251  cd .
+  252  cd devopsCA1cloud
+  253  cd ..
+  254  cd devopsCA1cloud
+  255  ls
+  256  cd --help
+  257  clear
+  258  ls
+  259  cd ..
+  260  cd CA1-CLOUD
+  261  ls
+  262  ls .
+  263  ls --help
+  264  ls -all
+  265  cd .
+  266  cd ..
+  267  rm CA1-CLOUD
+  268  del
+  269  delete
+  270  remove
+  271  git clone git@github.com:pearse1104/CA1-CLOUD.git
+  272  mkdir ca1
+  273  cd ca1
+  274  git@github.com:pearse1104/CA1-CLOUD.git
+  275  git clone git@github.com:pearse1104/CA1-CLOUD.git
+  276  git clone git@github.com:x00227604/devopsCA1cloud.git
+  277  cd CA1-CLOUD
+  278  bash user.sh
+  279  ls
+  280  cp myID.txt ../devopsCA1cloud/
+  281  cp user.sh ../devopsCA1cloud/
+  282  cd ..
+  283  cd devopsCA1cloud
+  284  ls
+  285  git branch
+  286  git switch main
+  287  git add .
+  288  git status
+  289  git commit -m "pushed user.sh and myID.txt"
+  290  git push
+  291  cd .
+  292  cd ..
+  293  git clone git@github.com:pearse1104/X00227604.git
+  294  cd CA1-CLOUD
+  295  cp user.sh ../X00227604/
+  296  cd ..
+  297  cd X00227604
+  298  ls
+  299  bash user.sh
+  300  git add .
+  301  git commit -m "push 2 new files"
+  302  git push
+  303  git switch -c myCloudBranch
+  304  echo myID.txt
+  305  nano myID.txt
+  306  git add .
+  307  git commit -m "Second Version"
+  308  git push
+  309  git push --set-upstream origin myCloudBranch
+  310  git switch main
+  311  history > history.txt
+  312  git add .
+  313  git commit -m "history"
+  314  git push
+  315  git
+  316  git config --global user.name x00227604
+  317  git config --global user.email x00227604@mytudublin.ie
+  318  git init
+  319  git init LAB9
+  320  cd lab9
+  321  cd LAB9
+  322  git add .
+  323  git push
+  324  git commit
+  325  git commit -m "test lab"
+  326  git init -b main
+  327  git add .
+  328  git commit -m "Initial commit"
+  329  cd ..
+  330  mkdir lab9
+  331  cd lab9
+  332  git init -b main
+  333  git add .
+  334  git commit -m "Initial commit"
+  335  git add
+  336  git add .
+  337  git commit -m "Initial commit"
+  338  git commit "Initial commit"
+  339  git push .
+  340  git push main
+  341  git push --set-upstream . main
+  342  git push --set-upstream main
+  343  git push
+  344  git push --set-upstream lab9 main
+  345  git push --set-upstream -m main
+  346  clear
+  347  gh repo create lab9 --public --source=. --push
+  348  gh repo create lab9 --public --source=
+  349  exit
+  350  rmdir lab9
+  351  rmdir LAB9
+  352  rmdir /s LAB9
+  353  rmdir /S LAB9
+  354  rm
+  355  rm -rf lab9
+  356  rm -rf LAB9
+  357  history
+  358  clear
+  359  mkdir lab9
+  360  cd lab9
+  361  gh repo create lab9 --public 
+  362  gh label create "EPIC"
+  363  git remote add origin git@github.com:x00227604/lab9.git
+  364  gh label create "EPIC"
+  365  gh issue create --title "do lab9" --label "EPIC"
+  366  gh issue create --title "create validate-data script" --label "enhancement" --assignee "@me"
+  367  nano validate-data.sh
+  368  bash validate-data.sh "ali osman" 0899999999
+  369  bash validate-data.sh "ali osmanfvreerverv" 0899999999
+  370  bash validate-data.sh "ali osman" 08999999999999
+  371  bash validate-data.sh "ali osmanfvreerverv" 08999999999999
+  372  gh issue create --title "create yaml test script" --label "enhancement" --assignee "@me"
+  373  nano validate-data.sh
+  374  mkdir -p .github/workflows
+  375  nano .github/workflows/basictests.yml
+  376  git add .
+  377  git commit -m "2 files for lab9"
+  378  git push -u origin main
+  379  rm -rf ~/.git
+  380  cd ~/lab9
+  381  git init -b main
+  382  git remote add origin git@github.com:x00227604/lab9.git
+  383  git add .
+  384  git commit -m "Add validate-data.sh and basictests.yml to repo root"
+  385  git push -u origin main --force
+  386  gh issue close 2 3
+  387  gh issue create --title "create lab9 project view" --body "Create project lab9 with LABEL, TITLE, ASSIGNEE columns" --label "enhancement" --assignee "@me"
+  388  gh issue close 4
+  389  gh issue create --title "create lab9 project view" --body "Create project lab9 with LABEL, TITLE, ASSIGNEE columns" --label "enhancement" --assignee "@me"
+  390  gh issue close 5
+  391  gh issue create --title "create test branch and update max length" --body "Update max name length to 20 and trigger Actions on test branch" --label "enhancement" --assignee "@me"
+  392  git checkout -b test
+  393  nano validate-data.sh
+  394  git add .
+  395  git commit "lab edit"
+  396  git commit -m "lab edit"
+  397  git push -u origin test
+  398  git branch
+  399  nano .github/workflows/basictests.yml
+  400  git add .github/workflows/basictests.yml
+  401  git commit -m "Run workflow on main and test branches"
+  402  git push -u origin test
+  403  history > history.txt
